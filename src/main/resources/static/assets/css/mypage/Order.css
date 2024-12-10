@@ -1,0 +1,90 @@
+.order {
+  width: 800px;
+  margin: 60px 0 60px 100px;
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+
+.order h1 {
+  text-align: center;
+  margin-bottom: 32px;
+  color: #FFBC0D;
+}
+
+.order ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+.order ul li {
+  flex: 0 0 30%;
+  height: 300px;
+  background-image: url("../../image/review/order.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.order ul li a {
+  width: 100%;
+  height: 300px;
+}
+
+.inorder {
+  width: 160px;
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.order ul li a h6 {
+  margin-bottom: 20px;
+  color: #d8a700;
+  text-align: center;
+}
+
+.order ul li a p {
+  margin-bottom: 8px;
+  color: #ffbc0d;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  margin-top: 20px;
+  gap: 8px; /* 버튼 간 간격 */
+}
+
+.pagination button {
+  padding: 8px 12px; /* 버튼 크기 */
+  font-size: 14px;
+  border: 1px solid #d8a700; /* 테두리 색상 */
+  background-color: white; /* 배경 색상 */
+  color: #d8a700; /* 텍스트 색상 */
+  cursor: pointer;
+  border-radius: 4px; /* 둥근 버튼 */
+  transition: all 0.2s ease-in-out; /* 마우스 올릴 때 애니메이션 */
+}
+
+.pagination button:hover {
+  background-color: #d8a700; /* 호버 시 배경 색상 */
+  color: white; /* 호버 시 텍스트 색상 */
+}
+
+.pagination button.active {
+  background-color: #d8a700; /* 활성화된 버튼 배경 색상 */
+  color: white; /* 활성화된 버튼 텍스트 색상 */
+  font-weight: bold;
+}
+

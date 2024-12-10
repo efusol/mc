@@ -1,0 +1,75 @@
+footer {
+  background: #292929;
+}
+
+#footer {
+  width: 1200px;
+  height: 260px;
+  margin: 0 auto;
+  padding: 44px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer .util {
+  list-style: none;
+  font-size: 14px;
+  font-weight: 900;
+  color: #fff;
+}
+
+#footer .util li {
+  margin-top: 5px;
+}
+
+#footer .util .first {
+  color: #FFFF00;
+}
+
+#footer .info {
+  margin-left: 40px;
+  list-style: none;
+  position: absolute;
+  left: 25%;
+  font-size: 14px;
+  font-weight: 600;
+  color: #808080;
+}
+
+#footer .info li {
+  margin-top: 5px;
+}
+
+#footer .sns {
+  display: flex;
+  list-style: none;
+}
+
+#footer .sns li {
+  margin-left: 24px;
+}
+
+#footer .sns li:nth-child(1) a,
+#footer .sns li:nth-child(2) a,
+#footer .sns li:nth-child(3) a,
+#footer .sns li:nth-child(4) a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url('../../image/common/ico_sns.png');
+}
+
+#footer .sns li:nth-child(1) a { background-position: 0 0; }
+#footer .sns li:nth-child(2) a { background-position: 0 -40px; }
+#footer .sns li:nth-child(3) a { background-position: 0 -80px; }
+#footer .sns li:nth-child(4) a { background-position: 0 -120px; }
+
+#footer .sns .im a {
+  width: 100px;
+  height: 72px;
+  display: block;
+}
+
+#footer .sns .im a img {
+  width: 100%;
+}

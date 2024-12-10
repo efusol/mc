@@ -1,0 +1,48 @@
+.box {
+  width: 1200px;
+  margin: auto;
+  margin-top: 120px;
+}
+
+.box.bottom {
+  margin-bottom: 120px;
+}
+
+.box h1 {
+  padding-bottom: 40px;
+}
+
+.box .depth {
+  display: flex;
+}
+
+.box .depth.top {
+  border-top: 2px solid #292929;
+}
+
+.box .depth.bottom {
+  border-bottom: 1px solid #292929;
+}
+
+.box .depth h3 {
+  width: 180px;
+  height: 160px;
+  padding: 40px 20px;
+  color: #292929;
+  font-size: 16px;
+  font-weight: 600;
+  border-right: 1px solid #292929;
+  border-top: 1px solid #d1d1d1;
+}
+
+.box .depth div {
+  flex: 1;
+  height: 160px;
+  padding: 40px 20px;
+  border-top: 1px solid #d1d1d1;
+}
+
+.box .depth p {
+  color: rgb(128, 128, 128);
+  font-weight: 600;
+}

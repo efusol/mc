@@ -1,0 +1,142 @@
+header {
+	height: 140px;
+	position: relative;
+	left: 0;
+	right: 0;
+	top: 0;
+	overflow: hidden;
+	background: #fff;
+}
+
+.header-visible:after {
+	display: block;
+}
+
+header a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+header .inner {
+	width: 1600px;
+	height: 140px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header .inner h1 {
+	float: left;
+}
+
+header .inner .content {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+header .inner .content .depth>li {
+  width: 140px;
+}
+
+header .inner .content .depth>li, header .inner .user li {
+	float: left;
+	line-height: 140px;
+	list-style: none;
+}
+
+header .inner .content .depth>li>a {
+	font-size: 24px;
+	display: block;
+	height: 100%;
+}
+
+header .inner .content .depth>li>a span {
+	position: relative;
+}
+
+header .inner .content .depth>li>a span:after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: -58px;
+	width: 0;
+	height: 3px;
+	background: #FFBC0D;
+	transition: 0.5s;
+}
+
+header .inner .content .depth>li:hover span:after {
+	width: 100%;
+	left: 0;
+}
+
+header .inner .content .depth>li .detail {
+	line-height: 24px;
+	list-style: none;
+	padding: 0 40px 0 0;
+}
+
+header .inner .content .depth>li .detail li {
+	padding: 12px 0;
+}
+
+header .inner .content .depth>li .detail li a {
+	color: #838383;
+	font-weight: 900;
+}
+
+header .inner .content .depth>li .detail li a:hover {
+	color: #000;
+	border-bottom: 1px solid #000;
+}
+
+header .inner .user {
+	float: right;
+}
+
+header .inner .user li {
+	padding: 0 12px;
+}
+
+header .inner .user {
+	font-weight: 600;
+	color: #FFBC0D;
+}
+
+.mypage {
+	position: relative;
+}
+
+.mypage-options {
+	width: 160px;
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	transform: translateX(-50%);
+	line-height: normal;
+	display: block;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #FFBC0D;
+}
+
+.mypage-options .option {
+	height: 60px;
+	line-height: normal;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+.cart-icon a {
+	color: #FF5252;
+	font-size: 24px;
+	margin-top: 2px;
+}
+
+.cart-icon a:hover {
+  color: #D32F2F;
+}

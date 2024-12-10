@@ -1,0 +1,150 @@
+.checkout {
+  max-width: 800px;
+  margin: 120px auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.checkout h1 {
+  color: #FFBC0D;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.order-info {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.order-info h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: bold;
+}
+
+.order-info label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.order-info input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.order-info input:focus {
+  border: 2px solid #FFBC0D;
+  outline: none;
+}
+
+#zipCodeContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#zipCodeButton {
+  padding: 0 10px;
+  height: 40px;
+  background-color: #FFBC0D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+#zipCodeButton:hover {
+  background-color: #e0a800;
+}
+
+.product-list {
+  width: 700px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.product-item img {
+  width: 100px;
+  height: 80px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.total-price {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 20px;
+  color: #FFBC0D;
+}
+
+button#submitOrder {
+  background-color: #FFBC0D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button#submitOrder:hover {
+  background-color: #e0a800;
+}
+
+.points {
+  width: 700px;
+  margin: 20px auto 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.points h3 {
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.points label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.points input[type="number"] {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.points-info {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #ff4500;
+}

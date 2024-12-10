@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.burger.mc.mapper.GoodsMapper">
+
+    <insert id="insertToCart" parameterType="com.burger.mc.dto.CartDTO">
+        INSERT INTO m_cart (g_no, m_no, c_quantity)
+        VALUES (#{g_no}, #{m_no}, #{c_quantity})
+        ON DUPLICATE KEY UPDATE c_quantity = c_quantity + #{c_quantity}
+    </insert>
+
+    <select id="selectCartItemsByMemberNo" parameterType="long" resultType="com.burger.mc.dto.CartDTO">
+        SELECT c.*, g.g_name, g.g_price, img.img_url
+        FROM m_cart c
+        JOIN m_goods g ON c.g_no = g.g_no
+        LEFT JOIN m_goods_image img ON g.g_no = img.g_no
+        WHERE c.m_no = #{mNo}
+    </select>
+
+    <update id="updateCartQuantity" parameterType="com.burger.mc.dto.CartDTO">
+        UPDATE m_cart
+        SET c_quantity = #{c_quantity}
+        WHERE g_no = #{g_no} AND m_no = #{m_no}
+    </update>
+
+    <delete id="deleteFromCart" parameterType="map">
+        DELETE FROM m_cart
+        WHERE g_no = #{g_no} AND m_no = #{m_no}
+    </delete>
+
+    <select id="findByIds" parameterType="long[]" resultType="com.burger.mc.dto.CartDTO">
+        SELECT *
+        FROM m_cart
+        WHERE c_no IN
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="selectGoodsByCategory" parameterType="string" resultType="com.burger.mc.dto.GoodsDTO">
+        SELECT g.*, img.img_url
+        FROM m_goods g
+        LEFT JOIN m_goods_image img ON g.g_no = img.g_no
+        WHERE g.g_category = #{category}
+    </select>
+
+    <select id="selectGoodsByCategoryAndType" parameterType="map" resultType="com.burger.mc.dto.GoodsDTO">
+        SELECT g.*, img.img_url
+        FROM m_goods g
+        LEFT JOIN m_goods_image img ON g.g_no = img.g_no
+        WHERE g.g_category = #{category}
+        <if test="type != null">
+            AND g.g_type = #{type}
+        </if>
+    </select>
+
+    <select id="selectProductById" parameterType="long" resultType="com.burger.mc.dto.GoodsDTO">
+        SELECT g.*, img.img_url
+        FROM m_goods g
+        LEFT JOIN m_goods_image img ON g.g_no = img.g_no
+        WHERE g.g_no = #{gNo}
+    </select>
+
+    <insert id="insertNewGoods" parameterType="com.burger.mc.dto.GoodsDTO" useGeneratedKeys="true" keyProperty="g_no">
+        INSERT INTO m_goods (g_category, g_type, g_name, g_english_name, g_content, g_sale_time, g_price, g_reg_date, g_mod_date)
+        VALUES (#{g_category}, #{g_type}, #{g_name}, #{g_english_name}, #{g_content}, #{g_sale_time}, #{g_price}, NOW(), NOW())
+    </insert>
+
+    <insert id="insertDetailImage" parameterType="map">
+        INSERT INTO m_goods_image (g_no, img_url, img_reg_date, img_mod_date)
+        VALUES
+        <foreach collection="imageFileList" item="imgUrl" separator=",">
+            (#{gNo}, #{imgUrl}, NOW(), NOW())
+        </foreach>
+    </insert>
+
+    <delete id="deleteGoods" parameterType="long">
+        DELETE FROM m_goods
+        WHERE g_no = #{g_no}
+    </delete>
+
+    <update id="updateGoods" parameterType="com.burger.mc.dto.GoodsDTO">
+        UPDATE m_goods
+        SET
+        g_category = #{g_category},
+        g_type = #{g_type},
+        g_name = #{g_name},
+        g_english_name = #{g_english_name},
+        g_content = #{g_content},
+        g_sale_time = #{g_sale_time},
+        g_price = #{g_price},
+        g_mod_date = NOW()
+        WHERE g_no = #{g_no}
+    </update>
+
+    <update id="updateGoodsImage" parameterType="com.burger.mc.dto.GoodsDTO">
+        UPDATE m_goods_image
+        SET img_url = #{img_url},
+        img_mod_date = NOW()
+        WHERE g_no = #{g_no}
+    </update>
+
+</mapper>

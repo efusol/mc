@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.burger.mc.mapper.ReviewMapper">
+
+    <!-- 리뷰 등록 -->
+    <insert id="insertReview" parameterType="com.burger.mc.dto.ReviewDTO" useGeneratedKeys="true" keyProperty="reviewNo">
+        INSERT INTO m_review (comment, rating, g_no, o_d_no, m_no, review_reg_date, review_mod_date)
+        VALUES (#{comment}, #{rating}, #{gNo}, #{oDNo}, #{mNo}, NOW(), NOW())
+    </insert>
+
+    <!-- 리뷰 이미지 등록 -->
+    <insert id="insertReviewImage" parameterType="com.burger.mc.dto.ReviewImageDTO">
+        INSERT INTO m_review_image (review_no, review_img_url, review_img_reg_date, review_img_mod_date)
+        VALUES (#{reviewNo}, #{reviewImgUrl}, NOW(), NOW())
+    </insert>
+
+    <!-- 리뷰 완료 상태 업데이트 -->
+    <update id="updateReviewedStatus" parameterType="long">
+        UPDATE m_order_detail
+        SET reviewed = 'Y'
+        WHERE o_d_no = #{oDNo}
+    </update>
+
+    <!-- 상품 번호로 리뷰와 이미지 가져오기 -->
+    <select id="selectReviewsWithImagesByGoodsNo" parameterType="long" resultType="map">
+        SELECT
+        r.review_no AS reviewNo,
+        r.comment,
+        r.rating,
+        r.g_no AS gNo,
+        r.o_d_no AS oDNo,
+        r.m_no AS mNo,
+        r.review_reg_date AS reviewRegDate,
+        r.review_mod_date AS reviewModDate,
+        m.m_name AS memberName
+        FROM m_review r
+        LEFT JOIN m_member m ON r.m_no = m.m_no
+        WHERE r.g_no = #{gNo}
+        ORDER BY r.review_reg_date DESC
+    </select>
+
+    <!-- 리뷰 번호로 리뷰 이미지 가져오기 -->
+    <select id="selectReviewImagesByReviewNo" parameterType="long" resultType="string">
+        SELECT review_img_url
+        FROM m_review_image
+        WHERE review_no = #{reviewNo}
+    </select>
+
+</mapper>

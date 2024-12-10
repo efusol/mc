@@ -1,0 +1,211 @@
+.order-detail {
+  width: 800px;
+  margin: 60px 0 60px 100px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.order-items {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* 호버 효과 추가 */
+.order-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  border-color: #ffbc0d; /* 테두리 색상 변경 */
+}
+
+/* 이미지는 살짝 확대 */
+.order-item-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease; /* 부드러운 확대 */
+}
+
+.order-item:hover .order-item-image {
+  transform: scale(1.05); /* 이미지 확대 */
+}
+
+
+.order-item-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.order-item-info {
+  text-align: center;
+}
+
+.order-item-info p {
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.order-item-info p:last-child {
+  font-weight: bold;
+  color: #ff4500;
+  font-size: 18px;
+}
+
+.review-button {
+  margin: 20px auto;
+  display: block;
+  padding: 12px 20px;
+  background-color: #ffbc0d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.review-button:hover {
+  background-color: #ffa500;
+}
+
+/* 모달 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.formBox table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.formBox table td {
+  padding: 10px;
+  vertical-align: top;
+}
+
+.formBox .star label {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #ffbc0d;
+  cursor: pointer;
+}
+
+.formBox textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none;
+}
+
+.formBox .attach input[type="file"] {
+  border: none;
+}
+
+.modal-btn {
+  text-align: center;
+}
+
+.modal-btn button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-btn button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+.modal-btn button[type="button"]:hover {
+  background-color: #e53935;
+}
+
+.modal-btn button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.modal-btn button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.modal-btn .close {
+  background-color: #aaa;
+  color: white;
+}
+
+.modal-btn .close:hover {
+  background-color: #888;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

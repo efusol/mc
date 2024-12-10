@@ -1,0 +1,65 @@
+.myinfo-container {
+  width: 800px;
+  min-height: 500px;
+  margin: 60px 0 60px 100px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Arial', sans-serif;
+}
+
+.myinfo-header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.myinfo-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.myinfo-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffbc0d;
+}
+
+.myinfo-point {
+  font-size: 1.2rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.myinfo-achievements {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  padding: 120px 0;
+  border-top: 1px solid #ececec;
+}
+
+.achievement-item {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555555;
+}
+
+.achievement-item span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.achievement-item .icon {
+  font-size: 3rem;
+  color: #ffbc0d;
+}

@@ -1,0 +1,30 @@
+.pro {
+  width: 1200px;
+  margin: 120px auto;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.pro li {
+  width: 366px;
+  margin: 0 32px 32px 0;
+}
+
+.pro li a {
+  display: block;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pro li a .text {
+  padding: 24px 30px;
+}
+
+.pro li a span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #292929;
+}

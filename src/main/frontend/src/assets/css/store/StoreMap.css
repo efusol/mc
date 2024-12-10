@@ -1,0 +1,66 @@
+.store {
+  width: 1200px;
+  margin: 120px auto;
+}
+
+.abc {
+  color: #da0000;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table colgroup col:nth-child(2) {
+  width: 16%;
+}
+
+table colgroup col:nth-child(3) {
+  width: 16%;
+}
+
+table colgroup col:nth-child(4) {
+  width: 34%;
+}
+
+table thead th {
+  padding: 24px 12px;
+  border-top: 2px solid #292929;
+  border-bottom: 1px solid #292929;
+}
+
+td h4 {
+  font-size: 20px;
+  color: #292929;
+  margin: 20px 0;
+}
+
+td p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #929292;
+}
+
+td p:last-of-type {
+  margin-bottom: 20px;
+}
+
+td.cont {
+  text-align: center;
+}
+
+.service {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service span {
+  flex: 0 0 50%;
+}
+
+.service span img {
+  width: 50px;
+  vertical-align: middle;
+}

@@ -1,0 +1,54 @@
+.box {
+  width: 1200px;
+  margin: 120px auto 0 auto;
+}
+
+.box h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.box p {
+  color: #929292;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.img {
+  display: flex;
+  margin-bottom: 120px;
+}
+
+.img.left div {
+  width: 500px;
+  padding: 20px 0 0 80px;
+}
+
+.img.right div {
+  width: 500px;
+  padding-top: 20px;
+}
+
+.img h1 {
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  line-height: 52px;
+}
+
+.img h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 32px;
+}
+
+.img a {
+  width: 180px;
+  margin-top: 32px;
+  padding: 0 40px;
+  line-height: 70px;
+  text-align: center;
+  border-radius: 70px;
+  font-weight: 600;
+  background: #ffbc0d;
+}
